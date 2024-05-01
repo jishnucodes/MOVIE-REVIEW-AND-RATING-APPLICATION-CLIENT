@@ -14,7 +14,7 @@ import AllReviews from '../components/AllReviews/AllReviews'
 
 export async function loader({ params }) {
     console.log(params)
-    const response = await axios.get(`/admin/movies/${params.movieId}`);
+    const response = await axios.get(`/api/v1/admin/movies/${params.movieId}`);
     const data = response.data
     return { data };
 }
@@ -43,7 +43,7 @@ const NewlyAddedMoviePage = () => {
         }
         try {
            
-            const response = await axios.post(`/movie/${id}/favorite`, {
+            const response = await axios.post(`/api/v1/movie/${id}/favorite`, {
                 mediaTitle: movie.title,
                 mediaImage: movie?.mediaImage || movie?.mediaImageUrl
             },

@@ -33,7 +33,7 @@ const MovieVideoSwiper = () => {
 
   useEffect(() => {
     if (movie) {
-      axios.get(`/movie/${movie.id}/videos`)
+      axios.get(`/api/v1/movie/${movie.id}/videos`)
       .then((response) => {
         if (response.data.results.length !== 0) {
           setVideo(response.data.results)

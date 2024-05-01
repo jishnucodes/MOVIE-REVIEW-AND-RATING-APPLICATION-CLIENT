@@ -13,7 +13,7 @@ const ManageUsers = () => {
         const token = localStorage.getItem("jwt_token")
         const fetchData = async () => {
             try {
-                const response = await axios.get('/admin/users', {
+                const response = await axios.get('/api/v1/admin/users', {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${token}`

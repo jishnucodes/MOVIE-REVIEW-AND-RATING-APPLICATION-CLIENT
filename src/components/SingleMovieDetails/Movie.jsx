@@ -18,10 +18,6 @@ const Movie = () => {
 
     const [movie, setMovie] = useRecoilState(movieDataState)
 
-
-   
-
-
     const handleFavoriteMovie = async (id) => {
         const token = localStorage.getItem("jwt_token")
         if (!token) {
@@ -31,7 +27,7 @@ const Movie = () => {
         }
         try {
            
-            const response = await axios.post(`/movie/${id}/favorite`, {
+            const response = await axios.post(`/api/v1/movie/${id}/favorite`, {
                 mediaTitle: movie.title,
                 mediaImage: movie.backdrop_path
             },

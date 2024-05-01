@@ -17,7 +17,7 @@ const AllReviews = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`/movie/${movieId}/otherReviews`)
+                const response = await axios.get(`/api/v1/movie/${movieId}/otherReviews`)
                 setReviews(response.data.reviews)
                 setUsers(response.data.users)
 

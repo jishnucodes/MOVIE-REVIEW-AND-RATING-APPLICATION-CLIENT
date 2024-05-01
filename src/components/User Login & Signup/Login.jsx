@@ -45,7 +45,7 @@ const Login = () => {
             console.log(data)
             try {
                 
-                const response = await axios.post('/user/signin', data);
+                const response = await axios.post('/api/v1/user/signin', data);
 
                 if (response.status === 200) {
                     alert(response.data.message) 
@@ -72,7 +72,7 @@ const Login = () => {
         } else {
             try {
                 console.log(data)
-                const response = await axios.post('/admin/signin', data)
+                const response = await axios.post('/api/v1/admin/signin', data)
 
                 if(response.status === 200) {
                     alert(response.data.message)

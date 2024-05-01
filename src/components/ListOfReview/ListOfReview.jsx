@@ -13,7 +13,7 @@ const ListOfReview = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/user/reviews', {
+        const response = await axios.get('/api/v1/user/reviews', {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`

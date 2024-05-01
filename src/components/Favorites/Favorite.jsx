@@ -16,7 +16,7 @@ const Favorite = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('/user/favorites', {
+                const response = await axios.get('/api/v1/user/favorites', {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`
@@ -37,7 +37,7 @@ const Favorite = () => {
     const deleteFavoriteMovie = async (id) => {
         try {
             console.log(id)
-            const response = await axios.delete(`/user/favorite/${id}`, {
+            const response = await axios.delete(`/api/v1/user/favorite/${id}`, {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`

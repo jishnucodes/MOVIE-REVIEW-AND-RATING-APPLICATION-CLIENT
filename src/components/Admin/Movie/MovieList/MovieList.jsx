@@ -15,7 +15,7 @@ const MovieList = () => {
         const fetchData = async () => {
             try {
                 console.log(token)
-                const response = await axios.get('/admin/movies', {
+                const response = await axios.get('/api/v1/admin/movies', {
                     headers: {
                         "Content-Type": "multipart/form-data",
                         "Authorization": `Bearer ${token}`
@@ -34,7 +34,7 @@ const MovieList = () => {
     const deleteMovie = async (id) => {
         try {
            
-            const response = await axios.delete(`/admin/movies/${id}`, {
+            const response = await axios.delete(`/api/v1/admin/movies/${id}`, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`

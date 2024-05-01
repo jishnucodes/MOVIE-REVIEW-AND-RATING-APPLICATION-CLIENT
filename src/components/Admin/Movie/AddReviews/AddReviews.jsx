@@ -31,7 +31,7 @@ const AddReviews = () => {
         }
       
         try {
-          const response = await axios.post(`/movie/${movie.id}/reviews`, {
+          const response = await axios.post(`/api/v1/movie/${movie.id}/reviews`, {
             content: content,
             mediaRating: rate,
             mediaTitle: movie.title

@@ -31,7 +31,7 @@ const AdminHeader = () => {
             const fetchData = async () => {
                 try {
                     console.log("This is the login data");
-                    const response = await axios.get('/admin', {
+                    const response = await axios.get('/api/v1/admin', {
                         headers: {
                             "Content-Type": "application/json",
                             "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`

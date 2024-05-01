@@ -15,7 +15,7 @@ import AllReviews from '../components/AllReviews/AllReviews'
 
 
 export async function loader({ params }) {
-    const response = await axios.get(`/movie/${params.movieId}`);
+    const response = await axios.get(`/api/v1/movie/${params.movieId}`);
     const data = response.data
     return { data };
 }

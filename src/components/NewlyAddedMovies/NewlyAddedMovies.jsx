@@ -15,7 +15,7 @@ const NewlyAddedMovies = ({title}) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('/admin/movies')
+                const response = await axios.get('/api/v1/admin/movies')
                 setMovies(response.data)
             } catch (error) {
                 console.log("Fetching Error: ",error)

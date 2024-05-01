@@ -23,7 +23,7 @@ const MovieImageSwiper = () => {
 
   useEffect(() => {
     if (movie) {
-      axios.get(`/movie/${movie.id}/backdrops`)
+      axios.get(`/api/v1/movie/${movie.id}/backdrops`)
       .then((response) => {
         setImage(response.data.backdrops)
       })

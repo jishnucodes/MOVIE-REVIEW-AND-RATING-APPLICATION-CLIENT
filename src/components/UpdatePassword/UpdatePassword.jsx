@@ -31,7 +31,7 @@ const UpdatePassword = () => {
         
         try {
             console.log(data);
-            const response  = await axios.patch('/user/update-password', data, {
+            const response  = await axios.patch('/api/v1/user/update-password', data, {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`

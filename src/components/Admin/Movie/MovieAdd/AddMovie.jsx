@@ -38,7 +38,7 @@ const AddMovie = () => {
         try {
             const token = localStorage.getItem('jwt_token')
             if(token) {
-                const response = await axios.post('/admin/movies', formData, {
+                const response = await axios.post('/api/v1/admin/movies', formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                         "Authorization": `Bearer ${token}`

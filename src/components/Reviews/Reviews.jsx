@@ -13,16 +13,11 @@ import { movieDataState } from '../../Store/Atoms/movieAtom';
 
 
 
-
 const Reviews = () => {
 
     const [movie, setMovie] = useRecoilState(movieDataState)
 
     const [reviews, setReviews] = useState([])
-
-
-    
-
 
     useEffect(() => {
         let isMounted = true;
@@ -31,7 +26,7 @@ const Reviews = () => {
             const fetchData = async () => {
                 console.log("Fetching reviews");
                 try {
-                    const response = await axios.get(`/movie/${movie.id}/reviews`, {
+                    const response = await axios.get(`/api/v1/movie/${movie.id}/reviews`, {
                         headers: {
                             "Content-Type": "application/json",
                             "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`
@@ -61,7 +56,7 @@ const Reviews = () => {
         console.log(id)
         try {
             console.log(id);
-            const response = await axios.delete(`movie/${id}`, {
+            const response = await axios.delete(`/api/v1/movie/${id}`, {
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`

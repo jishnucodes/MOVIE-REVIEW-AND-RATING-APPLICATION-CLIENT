@@ -37,7 +37,7 @@ const SignUp = () => {
     const onSubmit = async (data) => {
         if (isChecked === false) {
             try {
-                const response = await axios.post('/user/signup', data);
+                const response = await axios.post('/api/v1/user/signup', data);
 
                 if (response.status === 201) { // Handle successful signup
                     console.log('Signup successful:', response.data);
@@ -57,7 +57,7 @@ const SignUp = () => {
         } else {
             try {
                 console.log(data)
-                const response = await axios.post('/admin/signup', data);
+                const response = await axios.post('/api/v1/admin/signup', data);
 
                 if (response.status === 201) {
                     console.log('Signup successful', response.data)
