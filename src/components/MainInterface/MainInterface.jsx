@@ -38,7 +38,6 @@ const MainInterface = () => {
                                    className='explore_button px-3 py-2 ' 
                                    onClick={() =>{ 
                                     navigate('/home')
-                                    window.location.reload()
                                     }}
                                 >
                                     Explore Now
