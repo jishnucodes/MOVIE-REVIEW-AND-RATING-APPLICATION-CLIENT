@@ -1,0 +1,12 @@
+export const popularMovies = '/movie/popular'
+export const topRatedMovies = '/movie/top_rated'
+export const nowPlayingMovies = '/movie/now_playing'
+export const actionMovies = '/movie/action'
+export const adventureMovies = '/movie/adventure'
+export const animationMovies = '/movie/animation'
+export const comedyMovies = '/movie/comedy'
+export const crimeMovies = '/movie/crime'
+export const fantasyMovies = '/movie/fantasy'
+export const newlyAddedMovies = '/admin/movies'
+
+export const imageUrl = 'https://image.tmdb.org/t/p/original'

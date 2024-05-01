@@ -1,0 +1,57 @@
+.login_section {
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(250deg, var(--linear_color1) 10%, var(--linear_color2) 66%), url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e8205b9c-5815-4d27-8dd8-6c258c452145/d8lp3si-2dfe67ac-f49a-4d8f-9bda-d718ee9ba51c.jpg/v1/fill/w_1024,h_759,q_75,strp/all_dreamworks_skg_movies_in_order_by_espioartwork_102_d8lp3si-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzU5IiwicGF0aCI6IlwvZlwvZTgyMDViOWMtNTgxNS00ZDI3LThkZDgtNmMyNThjNDUyMTQ1XC9kOGxwM3NpLTJkZmU2N2FjLWY0OWEtNGQ4Zi05YmRhLWQ3MThlZTliYTUxYy5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.i2o2mRqooe425AWQiJmvD591HFhMQ_1KZMuTNR8r0OU');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login_section .login_container {
+    border: 2px solid rgba(14, 12, 12, 0.575);
+    border-radius: 2px;
+    border: none;
+    background:rgba(14, 12, 12, 0.575);
+    
+}
+
+.login_section .login_container h1 {
+    color: var(--white);
+    font-family: var(--lg-font);
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.login_section .login_container form input {
+    border-radius: 2px;
+    border: none;
+    background:rgba(14, 12, 12, 0.793);
+    color: var(--white);
+
+}
+
+.login_section .login_container form .signin_button {
+    color: var(--white);
+    background-color: red;
+    border: none;
+    border-radius: 2px;
+}
+
+.login_section .login_container form .bottom_section {
+    color: var(--white);
+    font-family: var(--sm-font);
+    font-size: 13px;
+}
+
+.login_section .login_container form .bottom_section  a {
+    color: var(--white);
+}
+
+.login_section .login_container form .bottom_section .text_bold {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.error_message {
+    color: red;
+}
