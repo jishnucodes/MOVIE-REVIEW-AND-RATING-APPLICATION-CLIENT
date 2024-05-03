@@ -65,7 +65,7 @@ const NewlyAddedMoviePage = () => {
 
     return (
         movie ? (
-            <section>
+            <section className='newlyAddedMovie_section'>
                 <div className='movie_box py-4' style={{ backgroundImage: `linear-gradient(250deg, var(--linear_color1) 0%, var(--linear_color2) 66%), url(${movie?.mediaImage || movie?.mediaImageUrl})` }}>
                     <Container className='py-4 mt-4'>
                         <div className="movie_container">
