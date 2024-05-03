@@ -6,28 +6,33 @@ import './Favorite.css'
 import axios from '../../axios/axios'
 import { imageUrl } from '../../urls/urls'
 import NoFavorites from '../NoFavorites/NoFavorites'
+import Preloader from '../Preloader/Preloader'
 
 const Favorite = () => {
 
     const [favorites, setFavorites] = useState([]);
     const [isFavorite, setIsFavorite] = useState(false)
+    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true)
                 const response = await axios.get('/api/v1/user/favorites', {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`
                     }
                 });
+                setLoading(false)
                 if (response.status === 200) {
                     setFavorites(response.data)
-                    setIsFavorite(true)
+                    setIsFavorite(response.data.length > 0)
                 }
             } catch (error) {
                 console.log(error)
+                setLoading(false)
             }
 
         }
@@ -56,6 +61,15 @@ const Favorite = () => {
     }
     return (
         <section className='favorites_container py-5'>
+            {
+                loading && (
+                    <Preloader />
+                )
+            }
+            {
+                !loading && (
+
+                
             <Container>
                 {
                     isFavorite ? (
@@ -88,6 +102,8 @@ const Favorite = () => {
                 }
 
             </Container>
+            )
+        }
         </section>
     )
 }

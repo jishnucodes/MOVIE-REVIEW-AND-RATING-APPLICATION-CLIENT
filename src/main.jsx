@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
@@ -36,8 +36,6 @@ import AddMovie from './components/Admin/Movie/MovieAdd/AddMovie.jsx';
 import MainInterface from './components/MainInterface/MainInterface.jsx';
 import PrivateRoutes from './components/PrivateRoutes/PrivateRoutes.jsx';
 import NewlyAddedMoviePage, {loader as newMovieLoader } from './pages/NewlyAddedMoviePage.jsx';
-
-
 
 
 
@@ -138,6 +136,8 @@ const router = createBrowserRouter([
     ]
   }
 ]);
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

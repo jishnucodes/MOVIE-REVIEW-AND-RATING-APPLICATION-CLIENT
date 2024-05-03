@@ -3,9 +3,9 @@ import './Preloader.css'
 
 const Preloader = () => {
     return (
-        <div className="preloader">
+        <div className="preloader py-5">
             <div className="loader"></div>
-            <p>My Awesome Web Page</p> 
+            <p>Loading...</p> 
         </div>
     )
 }

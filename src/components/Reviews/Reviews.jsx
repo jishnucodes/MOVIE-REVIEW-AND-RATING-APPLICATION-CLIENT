@@ -10,6 +10,7 @@ import AddReviews from '../Admin/Movie/AddReviews/AddReviews';
 import axios from '../../axios/axios';
 import { useRecoilState } from 'recoil';
 import { movieDataState } from '../../Store/Atoms/movieAtom';
+import Preloader from '../Preloader/Preloader';
 
 
 
@@ -19,8 +20,12 @@ const Reviews = () => {
 
     const [reviews, setReviews] = useState([])
 
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         let isMounted = true;
+
+        setLoading(true)
 
         if (movie) {
             const fetchData = async () => {
@@ -32,6 +37,8 @@ const Reviews = () => {
                             "Authorization": `Bearer ${localStorage.getItem("jwt_token")}`
                         }
                     });
+
+                    setLoading(false)
 
                     if (isMounted) {
                         setReviews(response.data);
@@ -75,33 +82,47 @@ const Reviews = () => {
     return (
         <>
             <section className='reviews'>
-                <Container>
-                    <div className='review_container'>
-                        <div className='review_content py-sm-4 py-3'>
-                            <h3>Reviews({reviews && reviews.length})</h3>
-                            {
-                                reviews ? (reviews.map((review) => {
+                {
+                    loading && (
+                        <Preloader />
+                    )
+                }
 
-                                    return (
+                {
+                    !loading && (
 
-                                        <div className="review_para" key={review.id}>
-                                            <p>{review.content}</p>
-                                            
-                                            <button className="delete_button" onClick={() => handleDeleteMovie(review.id)}>
-                                                <span className="delete_icon">
-                                                    <MdDeleteOutline />
-                                                </span>
-                                            </button>
-                                        </div>
+                        <Container>
+                            <div className='review_container'>
+                                <div className='review_content py-sm-4 py-3'>
+                                    <h3>Reviews({reviews && reviews.length})</h3>
+                                    {
+                                        reviews ? (reviews.map((review) => {
+
+                                            return (
+
+                                                <div className="review_para" key={review.id}>
+                                                    <p>{review.content}</p>
+
+                                                    <button className="delete_button" onClick={() => handleDeleteMovie(review.id)}>
+                                                        <span className="delete_icon">
+                                                            <MdDeleteOutline />
+                                                        </span>
+                                                    </button>
+                                                </div>
 
 
-                                    )
-                                })) : null
-                            }
-                        </div>
-                    </div>
-                    <AddReviews />
-                </Container>
+                                            )
+                                        })) : null
+                                    }
+                                </div>
+                            </div>
+                            <AddReviews />
+                        </Container>
+
+                    )
+                }
+
+
             </section>
 
         </>

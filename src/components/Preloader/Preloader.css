@@ -8,15 +8,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999; /* Ensure preloader is displayed on top */
+    z-index: 999; 
   }
   
+  .preloader p {
+    color: red;
+    font-family: var(--lg-font);
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
   .loader {
-    /* Style your loading animation here */
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 5px solid var(--body_color);
     border-top-color: transparent;
     animation: spin 1s linear infinite;
   }
