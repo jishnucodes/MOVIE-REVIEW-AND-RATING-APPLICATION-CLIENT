@@ -1,12 +1,12 @@
-export const popularMovies = '/api/v1/movie/popular'
-export const topRatedMovies = '/api/v1/movie/top_rated'
-export const nowPlayingMovies = '/api/v1/movie/now_playing'
-export const actionMovies = '/api/v1/movie/action'
-export const adventureMovies = '/api/v1/movie/adventure'
-export const animationMovies = '/api/v1/movie/animation'
-export const comedyMovies = '/api/v1/movie/comedy'
-export const crimeMovies = '/api/v1/movie/crime'
-export const fantasyMovies = '/api/v1/movie/fantasy'
+export const popularMovies = `${import.meta.env.VITE_TMDB_URL}/movie/popular?api_key=${import.meta.env.VITE_API_KEY}`
+export const topRatedMovies = `${import.meta.env.VITE_TMDB_URL}/movie/top_rated?api_key=${import.meta.env.VITE_API_KEY}`
+export const nowPlayingMovies = `${import.meta.env.VITE_TMDB_URL}/movie/now_playing?api_key=${import.meta.env.VITE_API_KEY}`
+export const actionMovies = `${import.meta.env.VITE_TMDB_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=28`
+export const adventureMovies = `${import.meta.env.VITE_TMDB_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=12`
+export const animationMovies = `${import.meta.env.VITE_TMDB_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=16`
+export const comedyMovies = `${import.meta.env.VITE_TMDB_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=35`
+export const crimeMovies = `${import.meta.env.VITE_TMDB_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=80`
+export const fantasyMovies = `${import.meta.env.VITE_TMDB_URL}/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=14`
 export const newlyAddedMovies = '/api/v1/admin/movies'
 
 export const imageUrl = 'https://image.tmdb.org/t/p/original'

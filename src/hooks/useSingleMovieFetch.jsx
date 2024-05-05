@@ -1,6 +1,6 @@
-import axios from "../axios/axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import axios from "axios";
 
 const useSingleMovieFetch = ({ url }) => {
     const [movie, setMovie] = useState(null);

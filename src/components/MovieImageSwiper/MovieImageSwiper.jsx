@@ -13,7 +13,7 @@ import 'swiper/css/scrollbar';
 import './MovieImages.css'
 import { useRecoilState } from 'recoil';
 import { movieDataState } from '../../Store/Atoms/movieAtom';
-import axios from '../../axios/axios';
+import axios from 'axios';
 import { imageUrl } from '../../urls/urls';
 
 const MovieImageSwiper = () => {
@@ -23,7 +23,7 @@ const MovieImageSwiper = () => {
 
   useEffect(() => {
     if (movie) {
-      axios.get(`/api/v1/movie/${movie.id}/backdrops`)
+      axios.get(`${import.meta.env.VITE_TMDB_URL}/movie/${movie.id}/images?api_key=${import.meta.env.VITE_API_KEY}`)
       .then((response) => {
         setImage(response.data.backdrops)
       })

@@ -4,7 +4,7 @@ import RowCard from '../components/RowCard/RowCard';
 import { newlyAddedMovies, nowPlayingMovies, popularMovies, topRatedMovies } from '../urls/urls';
 import NewlyAddedMovies from '../components/NewlyAddedMovies/NewlyAddedMovies';
 import Preloader from '../components/Preloader/Preloader';
-import axios from '../axios/axios';
+import axios from 'axios';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);

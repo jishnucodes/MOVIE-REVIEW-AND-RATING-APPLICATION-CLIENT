@@ -14,7 +14,7 @@ import './MovieVideoSwiper.css'
 import { movieDataState } from '../../Store/Atoms/movieAtom';
 import { useRecoilState } from 'recoil';
 import YouTube from 'react-youtube';
-import axios from '../../axios/axios';
+import axios from 'axios';
 
 const MovieVideoSwiper = () => {
 
@@ -33,7 +33,7 @@ const MovieVideoSwiper = () => {
 
   useEffect(() => {
     if (movie) {
-      axios.get(`/api/v1/movie/${movie.id}/videos`)
+      axios.get(`${import.meta.env.VITE_TMDB_URL}/movie/${movie.id}/videos?api_key=${import.meta.env.VITE_API_KEY}`)
       .then((response) => {
         if (response.data.results.length !== 0) {
           setVideo(response.data.results)

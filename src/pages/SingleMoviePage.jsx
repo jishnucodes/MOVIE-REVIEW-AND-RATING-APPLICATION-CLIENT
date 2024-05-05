@@ -6,7 +6,7 @@ import Reviews from '../components/Reviews/Reviews'
 import RowCard from '../components/RowCard/RowCard'
 import { useRecoilState } from 'recoil'
 import { movieDataState } from '../Store/Atoms/movieAtom'
-import axios from '../axios/axios'
+import axios from 'axios'
 import { useLoaderData } from 'react-router-dom'
 import { actionMovies } from '../urls/urls'
 import AllReviews from '../components/AllReviews/AllReviews'
@@ -15,7 +15,7 @@ import AllReviews from '../components/AllReviews/AllReviews'
 
 
 export async function loader({ params }) {
-    const response = await axios.get(`/api/v1/movie/${params.movieId}`);
+    const response = await axios.get(`${import.meta.env.VITE_TMDB_URL}/movie/${params.movieId}?api_key=${import.meta.env.VITE_API_KEY}`);
     const data = response.data
     return { data };
 }
